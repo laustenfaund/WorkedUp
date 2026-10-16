@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worked Up manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Anton&display=swap">
+<style>
+:root{
+  --bg:#F1F1EE; --surface:#FFFFFF; --surface2:#E7E6E1; --ink:#1C1B19; --muted:#67645D;
+  --line:#D6D4CD; --accent:#86651C; --accent-soft:#F1E7CF;
+  --ui:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display:"Cormorant Garamond", Georgia, serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#131312; --surface:#1D1C1A; --surface2:#292825; --ink:#ECEAE4; --muted:#A29E95;
+    --line:#383631; --accent:#D3AC57; --accent-soft:#3A301A; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font:15px/1.6 var(--ui); -webkit-font-smoothing:antialiased}
+.shell{max-width:900px; margin:0 auto; padding:28px 16px 80px}
+.masthead{border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 6px}
+h1{font-family:var(--display); font-weight:600; font-size:34px; margin:0 0 8px}
+h1 em{font-weight:400; color:var(--muted)}
+.lede{color:var(--muted); max-width:60ch; margin:0}
+.layout{display:grid; grid-template-columns:190px 1fr; gap:32px; align-items:start}
+@media (max-width:700px){ .layout{grid-template-columns:1fr} .toc{position:static !important; max-height:none !important} }
+.toc{position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto; overscroll-behavior:contain}
+.toc-label{font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 8px}
+.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+.toc a{color:var(--muted); text-decoration:none; font-size:14px}
+.toc a:hover{color:var(--accent)}
+section{margin-bottom:32px; scroll-margin-top:16px}
+.sec-num{font-size:12px; font-weight:600; color:var(--accent); margin:0 0 2px}
+h2{font-size:19px; margin:0 0 10px}
+h3{font-size:15px; margin:16px 0 6px}
+p{margin:0 0 10px; max-width:62ch}
+ul,ol{padding-left:20px; max-width:60ch; margin:0 0 10px}
+li{margin-bottom:5px}
+b.ui{font-weight:600; background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0 6px; white-space:nowrap}
+.note{border:1px solid var(--accent); background:var(--accent-soft); border-radius:10px; padding:10px 12px; font-size:14px; max-width:58ch; margin:0 0 10px}
+pre{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; overflow-x:auto; max-width:60ch}
+footer{margin-top:16px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+
+:root{ --accent:#A8471F; --accent-soft:#F6E1D6; --display:"Anton", Impact, sans-serif; }
+@media (prefers-color-scheme: dark){ :root{ --accent:#F08A5D; --accent-soft:#40261A; } }
+h1{font-weight:400; font-size:32px; letter-spacing:.02em; text-transform:uppercase}
+h1 em{font-style:normal; color:var(--accent)}
+</style></head>
+<body>
+<div class="shell">
+  <header class="masthead">
+    <p class="eyebrow">User manual</p>
+    <h1>Worked <em>Up</em></h1>
+    <p class="lede">Make picture-card posts for Instagram and Facebook by tapping or by talking. It runs in your browser, installs on your phone, and can sync through Google Drive.</p>
+  </header>
+  <div class="layout">
+    <nav class="toc">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#start">Getting around</a></li>
+        <li><a href="#decks">Decks</a></li>
+        <li><a href="#inside">Inside a deck</a></li>
+        <li><a href="#voice">Changing things by voice</a></li>
+        <li><a href="#editing">Editing a card by hand</a></li>
+        <li><a href="#ai">AI styles</a></li>
+        <li><a href="#types">Card types and templates</a></li>
+        <li><a href="#fonts">Fonts</a></li>
+        <li><a href="#share">Sharing your post</a></li>
+        <li><a href="#setup">Voice and AI setup</a></li>
+        <li><a href="#drive">Google Drive</a></li>
+        <li><a href="#backup">Backups</a></li>
+        <li><a href="#phone">On your phone</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ol>
+    </nav>
+    <main>
+      <section id="start">
+        <p class="sec-num">01</p>
+        <h2>Getting around</h2>
+        <p>Worked Up makes posts of picture cards for Instagram and Facebook. You can change things by tapping, or just by saying what you want.</p>
+        <p>The bar at the bottom has two places:</p>
+        <ul>
+          <li><b class="ui">Decks</b> for your posts. Each deck is one post, made of cards.</li>
+          <li><b class="ui">Library</b> for Google Drive, the voice and AI key, fonts, saved designs and backups.</li>
+        </ul>
+        <p>Everything saves by itself as you go.</p>
+        <p>To use voice changes and AI styles, add a Gemini key once on each phone. See "Voice and AI setup".</p>
+      </section>
+      <section id="decks">
+        <p class="sec-num">02</p>
+        <h2>Decks</h2>
+        <ul>
+          <li><b class="ui">New deck</b> makes a deck with 5 empty cards, named with today's date (for example "Post, Sep 28").</li>
+          <li><b class="ui">Start from…</b> makes a deck from a saved template, or from a copy of a recent deck. Copies keep the text and layout but not the photos. The app comes with a template called "Starter, 5 cards".</li>
+        </ul>
+        <p>Each deck shows its first card. Tap it, or <b class="ui">Open</b>, to work on it. <b class="ui">Rename</b> changes its name. <b class="ui">More</b> has:</p>
+        <ul>
+          <li><b>Duplicate</b>: a full copy, photos included.</li>
+          <li><b>Save as template</b>: keeps its cards and text styles to start future decks from.</li>
+          <li><b>Delete deck</b>: removes it for good.</li>
+        </ul>
+      </section>
+      <section id="inside">
+        <p class="sec-num">03</p>
+        <h2>Inside a deck</h2>
+        <p>An open deck shows all its cards. From here you can:</p>
+        <ul>
+          <li>Tap a card to edit it.</li>
+          <li>Use <b class="ui">+</b> to add an empty card, or <b class="ui">−</b> to remove the last card.</li>
+          <li><b class="ui">Photos → cards</b>: pick several photos and each one becomes a new card.</li>
+          <li>Change the card size: <b>4:5</b> (best for feeds), <b>1:1</b> (square), <b>3:4</b> or <b>9:16</b> (Stories).</li>
+          <li>Drag cards to change their order. On a phone, press and hold a card first.</li>
+          <li>Type in the name box at the top to rename the deck.</li>
+        </ul>
+        <p><b class="ui">Share</b> turns the cards into pictures. See "Sharing your post" below.</p>
+      </section>
+      <section id="voice">
+        <p class="sec-num">04</p>
+        <h2>Changing things by voice</h2>
+        <p>Inside a deck, a bar sits at the bottom of the screen. To use it:</p>
+        <ol>
+          <li>Tap the microphone, say what you want, then pause. You can also type in the box and tap <b class="ui">Go</b>.</li>
+          <li>Worked Up makes the change and says what it did.</li>
+        </ol>
+        <p>To point at something, tap a piece of text on the card first, or name it: "the title", "the caption", "card 3".</p>
+        <p>Some things you can say:</p>
+        <ul>
+          <li><b>Words:</b> "Change the text to: Be still and know", "Add text at the bottom that says follow for more", "Put a line break after still".</li>
+          <li><b>Text style:</b> "Make the title bigger and gold", "Use a handwritten font", "Move it to the top", "Put a dark box behind the caption".</li>
+          <li><b>Photo:</b> "Make it black and white", "Warmer and a little brighter", "Add dark edges and film grain", "Zoom in and move the photo up", "Blur the background a lot".</li>
+          <li><b>AI styles:</b> "Turn it into a watercolor painting", "Make it look like a pencil drawing", "Back to the original photo".</li>
+          <li><b>Cards:</b> "Add three cards", "Go to card 2", "Move this card to the end", "Delete card 4", "Make every card sepia", "Make it square".</li>
+        </ul>
+        <p>Tap <b class="ui">?</b> in the bar for these examples any time.</p>
+        <p><b class="ui">Undo</b> and <b class="ui">Redo</b> are always there. Saying "undo" or "redo" works too. They cover changes made by voice and by hand, while the deck is open.</p>
+        <div class="note">On iPhone, the microphone can refuse to start inside the home-screen app. If it does, tap the text box and use the microphone key on your keyboard instead. It works the same way.</div>
+      </section>
+      <section id="editing">
+        <p class="sec-num">05</p>
+        <h2>Editing a card by hand</h2>
+        <p>The card is shown large. Tap a piece of text to select it, then drag to move it. Drag the photo itself to reframe it.</p>
+        <p>Use <b class="ui">‹</b> and <b class="ui">›</b> at the top to go to the previous or next card, and <b class="ui">‹ All cards</b> to go back to the whole deck.</p>
+        <p>The buttons under the card move it earlier or later, apply a saved card type, duplicate it, save its design as a card type, or delete it.</p>
+        <p>Beside the card are three tabs: <b>Text</b>, <b>Photo</b> and <b>Look</b>.</p>
+        <h3>Text</h3>
+        <p>The buttons across the top list each piece of text on the card. Tap one to select it, or <b class="ui">+ Text</b> to add a new one. You can type, paste, or use your keyboard's microphone to write the words.</p>
+        <p>You can change the font, size, weight, italic, color, alignment, width, line spacing, see-through amount (opacity) and shadow. You can also put a box behind the text, center it, put it on top of other text, duplicate it or delete it.</p>
+        <h3>Photo</h3>
+        <ul>
+          <li><b class="ui">Add photo</b> or <b class="ui">From Drive</b>. While editing a card, you can also paste a photo, or drop one onto the app.</li>
+          <li>Zoom, and slide the photo left, right, up or down. Or drag it on the card.</li>
+          <li><b class="ui">Rotate</b>, <b class="ui">Mirror</b>, and <b class="ui">Reset framing</b>.</li>
+          <li>Darken, to make the text easier to read.</li>
+          <li>With no photo, the card is a fade between a top color and a bottom color that you choose.</li>
+        </ul>
+        <h3>Look</h3>
+        <p>15 looks: Original, Warm, Cool, Sepia, Black &amp; white, Noir, Vintage, Faded, Pop, Dreamy, Duotone (pick your own two colors), Poster, Comic dots, Pixels and Pencil sketch. A slider sets how strong the look is.</p>
+        <p><b>Adjust</b> opens sliders for brightness, contrast, color, warmth, tint, fade, dark edges, film grain, blur and sharpen. <b class="ui">Reset look</b> undoes all of these.</p>
+      </section>
+      <section id="ai">
+        <p class="sec-num">06</p>
+        <h2>AI styles</h2>
+        <p>At the bottom of the <b>Look</b> tab, <b>Restyle with AI</b> repaints the card's photo in a new style. Pick one of the ready-made styles (Watercolor painting, Oil painting, Pencil drawing, Charcoal sketch, Storybook illustration, Impressionist painting, Stained glass, Vintage film photo), or describe your own and tap <b class="ui">Restyle</b>.</p>
+        <ul>
+          <li>It takes 10 to 30 seconds and needs the internet and a Gemini key.</li>
+          <li>It always works from your original photo, so restyling twice doesn't pile effects on top of each other.</li>
+          <li><b class="ui">Back to original photo</b> undoes it.</li>
+        </ul>
+      </section>
+      <section id="types">
+        <p class="sec-num">07</p>
+        <h2>Card types and templates</h2>
+        <ul>
+          <li>A <b>card type</b> is the design of one card: its text pieces, fonts and colors. The app comes with Title, Statement, Quote, Caption and Photo only. Save your own from a card's buttons, and apply one to any card. Applying one replaces the card's text but keeps the photo.</li>
+          <li>A <b>template</b> is a whole deck's design, without photos. Save one from the Decks page with <b class="ui">More</b>, then <b>Save as template</b>.</li>
+        </ul>
+        <p>In <b class="ui">Library</b> you can rename or delete both. Templates also have <b class="ui">Use</b>, which starts a new deck from them.</p>
+      </section>
+      <section id="fonts">
+        <p class="sec-num">08</p>
+        <h2>Fonts</h2>
+        <p>The app comes with 13 fonts. The ones you use most are listed first. In <b class="ui">Library</b>, under Fonts, you can:</p>
+        <ul>
+          <li><b class="ui">Add Google font</b>: type the name exactly as it appears on fonts.google.com.</li>
+          <li><b class="ui">Upload font file</b>: a .ttf, .otf, .woff or .woff2 file. You can also drop a font file onto the app.</li>
+          <li>Pick a font file from Google Drive.</li>
+          <li><b class="ui">Remove</b> a font from the list.</li>
+        </ul>
+      </section>
+      <section id="share">
+        <p class="sec-num">09</p>
+        <h2>Sharing your post</h2>
+        <p>Open a deck and tap <b class="ui">Share</b>. The app makes a full-size picture of every card (1080 pixels wide). Then:</p>
+        <ul>
+          <li><b class="ui">Share…</b> opens your phone's share sheet. Pick Instagram or Facebook and the cards go in as one post, in order.</li>
+          <li><b class="ui">Save to Drive</b> puts them in your Drive, in Worked Up › Decks › the deck's name. This needs Drive connected.</li>
+          <li><b class="ui">Save all (.zip)</b> downloads them as one zip file.</li>
+          <li>On a phone you can also press and hold a picture to save it to your photos.</li>
+        </ul>
+      </section>
+      <section id="setup">
+        <p class="sec-num">10</p>
+        <h2>Voice and AI setup</h2>
+        <p>Voice changes and AI styles use Google's Gemini. They need a Gemini API key, entered once on each phone.</p>
+        <ol>
+          <li>Get a key at <b>aistudio.google.com</b> → <b>Get API key</b>.</li>
+          <li>In Worked Up, go to <b class="ui">Library</b> → <b>Voice and AI</b>, paste the key, and tap <b class="ui">Check key</b>.</li>
+          <li>It says "Key works" and which models it will use. It picks the newest ones your key can use.</li>
+        </ol>
+        <p>The key stays on that phone only. It isn't synced to Drive or included in backups. To remove it, empty the box and tap <b class="ui">Check key</b>.</p>
+        <p><b>Voice language</b> sets which language the microphone listens for. "Phone's language" is the default.</p>
+        <p><b>Advanced: AI models</b> shows the models in use. Leave them alone unless something stops working; tapping <b class="ui">Check key</b> fills them in again.</p>
+        <div class="note">For safety, in Google Cloud Console set the key's <b>Application restrictions</b> to Websites, with the app's address. Then it only works from Worked Up.</div>
+      </section>
+      <section id="drive">
+        <p class="sec-num">11</p>
+        <h2>Google Drive</h2>
+        <p>Connecting Google Drive keeps both phones the same and keeps a copy of everything in your Drive.</p>
+        <ol>
+          <li>Go to <b class="ui">Library</b> and tap <b class="ui">Connect Google Drive</b>.</li>
+          <li>Sign in. If Google says it "hasn't verified this app", tap <b>Continue</b>. That's normal for a private app.</li>
+        </ol>
+        <p>After that, the app syncs on its own after changes and when it opens. The button at the top right shows how it's going. Tap it if it says Tap to sync or Sync problem. If two phones both changed things before syncing, the app asks which version to keep.</p>
+        <p>Your Drive gets a <b>Worked Up</b> folder, with the app's data, a <b>Photos and fonts</b> folder, and a <b>Decks</b> folder for pictures saved with Save to Drive. The app can only see files it made and files you pick.</p>
+        <p><b class="ui">Disconnect</b> stops syncing on this phone. Your files stay in Drive.</p>
+      </section>
+      <section id="backup">
+        <p class="sec-num">12</p>
+        <h2>Backups</h2>
+        <p>Without Drive, everything lives only on this phone. Now and then, go to <b class="ui">Library</b> and tap <b class="ui">Save backup file</b>. That saves one zip file with everything except the Gemini key.</p>
+        <p><b class="ui">Restore from backup</b> loads a backup file. It replaces everything in the app with what's in the file.</p>
+      </section>
+      <section id="phone">
+        <p class="sec-num">13</p>
+        <h2>On your phone</h2>
+        <ul>
+          <li><b>Pixel and other Android phones:</b> in Chrome, open the app, then <b class="ui">Library</b> → <b class="ui">Install app</b>, or the browser menu's <b>Install app</b>.</li>
+          <li><b>iPhone:</b> in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>.</li>
+        </ul>
+        <p>It works without internet, except for voice changes, AI styles, Drive sync and sharing. Updates arrive the next time it's opened with internet.</p>
+      </section>
+      <section id="trouble">
+        <p class="sec-num">14</p>
+        <h2>Troubleshooting</h2>
+        <p><b>"Add your Gemini key in Library › Voice and AI first."</b>: see "Voice and AI setup".</p>
+        <p><b>"Google says the Gemini key isn't valid"</b> or <b>"turned down the Gemini key"</b>: check the key in Library and tap <b class="ui">Check key</b>.</p>
+        <p><b>"That AI model isn't available on this key"</b>: open Library → Voice and AI and tap <b class="ui">Check key</b>.</p>
+        <p><b>"Too many AI requests, or the key is out of credit"</b>: wait a minute and try again. If it keeps happening, check the key's billing at aistudio.google.com.</p>
+        <p><b>"Didn't catch that"</b>: say it another way, or type it.</p>
+        <p><b>The microphone won't start</b>: tap the text box and use your keyboard's microphone key.</p>
+        <p><b>"The AI didn't send back a picture"</b>: describe the style differently.</p>
+        <p><b>"You're offline"</b>: voice changes and AI styles need the internet.</p>
+        <p><b>Sync problem</b>: tap the button at the top right to reconnect.</p>
+      </section>
+    </main>
+  </div>
+  <footer>This manual describes the app as it's built. Tap Close to go back.</footer>
+</div>
+<script>
+  // Contents links scroll here rather than jumping by #hash, which can
+  // move the app page behind this frame on phones.
+  document.querySelectorAll('.toc a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body></html>
