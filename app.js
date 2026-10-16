@@ -1585,6 +1585,13 @@ document.addEventListener("paste", async e => {
   setPhoto(curCard(), id); changed(); renderPanel();
 });
 
+/* ---------- manual ---------- */
+function openManual() {
+  const s = sheet("Manual", h("iframe", { class: "manualframe", src: "manual.html", title: "Worked Up manual" }));
+  s.body.parentElement.classList.add("manual");
+}
+$("#manualBtn").addEventListener("click", openManual);
+
 /* ---------- boot ---------- */
 (async function boot() {
   await DB.open();

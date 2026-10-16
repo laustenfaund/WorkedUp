@@ -44,6 +44,7 @@ The key is saved only on that phone. It is never put in this repo, synced to Dri
 ## Files
 
 - `index.html`: page and styles
+- `manual.html`: the user manual, opened with the Manual button at the top of the app
 - `app.js`: cards, photo tools, voice, AI and export
 - `drive.js`: Google Drive sync
 - `config.js`: Google values for Drive (not secret; they only work from this site)
